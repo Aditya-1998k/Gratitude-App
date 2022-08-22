@@ -14,7 +14,7 @@ function Post() {
   const displayUsers=(post.slice(pagesVisited, pagesVisited+usersPerPage)).map((data,index)=>{
     return(
           <>
-            <div class="card" key={index} style={{width: "17.5rem",display:"block", float:"left", margin:"25px",padding:"10px",boxShadow: "rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset"}}>
+            <div class="card" key={index} style={{width: "17.5rem",height:"27rem",display:"block", float:"left", margin:"28px",padding:"10px",boxShadow: "rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset"}}>
             <img src={data.image} class="card-img-top" style={{height:"200px"}} alt="unsplace"/>
             <div class="card-body">
             <p class="card-text"><strong>{data.title}</strong></p>
@@ -36,7 +36,7 @@ function Post() {
             authorization:authToken
           }
         }).then((data)=>{
-          setpost(data.data)
+          setpost(data.data.reverse())
         }).catch((err)=>{
           console.log(err);
         })

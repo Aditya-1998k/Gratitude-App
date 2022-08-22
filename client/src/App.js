@@ -3,6 +3,7 @@ import Login from "./Component/Login/Login";
 import Post from "./Component/Post/Post";
 import Signup from "./Component/Signup/Signup";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+import AddPost from "./Component/addPost/AddPost";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
           <Route path="/signup" element={<Signup/>}/>  
           <Route path="/home" element={<Home></Home>}/>  
           <Route path="/post" element={<Post></Post>}/>  
+          <Route path="/addpost" element={<AddPost/>}/> 
         </Routes>  
     </BrowserRouter>
   );

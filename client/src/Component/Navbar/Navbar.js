@@ -1,6 +1,6 @@
 import React, { useState , useEffect} from 'react';
-import {useNavigate} from "react-router-dom";
-import axios from "axios"
+import {useNavigate , Link} from "react-router-dom";
+import axios from "axios";
 
 function Navbar() {
     const [user, setuser]=useState()
@@ -32,7 +32,7 @@ function Navbar() {
         <div class="container-fluid">
             <h1 class="navbar-brand">Gratitude App</h1>
             <span class="navbar-text">
-                    <button style={{margin:"4px",borderRadius:"30px"}} type="button" class="btn btn-primary">Write a Gratitude</button>
+                    <button style={{margin:"4px",borderRadius:"30px"}} type="button" class="btn btn-primary"><Link to="/addpost" style={{textDecoration:"none",color:"white"}}>Write a Gratitude</Link></button>
                     <button style={{margin:"4px",borderRadius:"30px"}} type="button" class="btn btn-primary">About</button>
                     <button style={{margin:"4px",borderRadius:"30px"}} type="button" class="btn btn-primary">{user}</button>
                     <button style={{margin:"4px",borderRadius:"30px"}} type="button" class="btn btn-primary" onClick={()=>handleLogout()}>Logout</button>
