@@ -41,7 +41,6 @@ router.post("/signup", (req, res)=>{
     }else{
         res.status(400).send("Password Not Matching")
     }
-    
 })
 
 module.exports=router;

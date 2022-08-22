@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useState , useEffect} from 'react';
 import {useNavigate} from "react-router-dom";
+import axios from "axios"
 
 function Navbar() {
-
+    const [user, setuser]=useState()
     const navigate=useNavigate()
 
     const handleLogout=()=>{
         localStorage.removeItem("authToken");
         navigate("/")
     }
+    const authToken=localStorage.getItem("authToken")
+    useEffect(()=>{
+        axios({
+          method:"GET",
+          url:"http://localhost:3001/post/get",
+          headers:{
+            authorization:authToken
+          }
+        }).then((data)=>{
+          setuser(data.data[0].email)
+          console.log(data.data[0])
+        }).catch((err)=>{
+          console.log(err);
+        })
+  },[authToken])
 
   return (
     <>
@@ -18,7 +34,7 @@ function Navbar() {
             <span class="navbar-text">
                     <button style={{margin:"4px",borderRadius:"30px"}} type="button" class="btn btn-primary">Write a Gratitude</button>
                     <button style={{margin:"4px",borderRadius:"30px"}} type="button" class="btn btn-primary">About</button>
-                    <button style={{margin:"4px",borderRadius:"30px"}} type="button" class="btn btn-primary">Contact Us</button>
+                    <button style={{margin:"4px",borderRadius:"30px"}} type="button" class="btn btn-primary">{user}</button>
                     <button style={{margin:"4px",borderRadius:"30px"}} type="button" class="btn btn-primary" onClick={()=>handleLogout()}>Logout</button>
             </span>
         </div>
