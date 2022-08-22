@@ -1,0 +1,22 @@
+.login-main{
+    width: 100vw;
+    height: 100vh;
+}
+.login-submain{
+    margin:100px 300px 150px 300px;
+    background-color:lightblue;
+    padding: 50px 20px 50px 20px;
+    border-radius: 5px;
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+input{
+    position:relative;
+    left: 221px;
+    margin-bottom: 10px;
+}
+h2{
+    font-family: 'Times New Roman', Times, serif;
+}
