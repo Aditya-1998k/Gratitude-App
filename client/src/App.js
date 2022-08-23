@@ -4,6 +4,7 @@ import Post from "./Component/Post/Post";
 import Signup from "./Component/Signup/Signup";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import AddPost from "./Component/addPost/AddPost";
+import AboutPage from "./Component/About/AboutPage";
 
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
           <Route path="/signup" element={<Signup/>}/>  
           <Route path="/home" element={<Home></Home>}/>  
           <Route path="/post" element={<Post></Post>}/>  
-          <Route path="/addpost" element={<AddPost/>}/> 
+          <Route path="/addpost" element={<AddPost/>}/>
+          <Route path="/about" element={<AboutPage/>}/> 
         </Routes>  
     </BrowserRouter>
   );

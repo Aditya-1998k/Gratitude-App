@@ -1,7 +1,8 @@
 const express=require("express");
 const mongoose=require("mongoose");
 const userController=require("./User/Routes/userRoutes");
-const postController=require("./User/Routes/postRotues")
+const postController=require("./User/Routes/postRotues");
+const uploadController=require("./User/Routes/upload")
 const multer=require("multer")();
 require("dotenv").config();
 const cors=require("cors");
@@ -26,7 +27,8 @@ mongoose.connect("mongodb://127.0.0.1:27017/gratitudeApp", (data)=>{
 })
 app.use(cors())
 app.use(multer.array());
-app.use(express.json());
-app.use(express.urlencoded({extended:false}))
+app.use(express.json({limit: '50mb'}));
+app.use(express.urlencoded({extended:false,limit: '50mb'}))
 app.use("/user",userController)
 app.use("/post",postController)
+app.use("/upload", uploadController)
